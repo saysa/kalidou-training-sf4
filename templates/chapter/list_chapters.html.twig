@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Chapters</h1>
+
+    {% for chapter in chapters %}
+
+        <h2>{{ chapter.title }}</h2>
+        <span>Publié le {{ chapter.publishDate|date('Y-m-d') }}</span>
+
+        <div>
+            {{ chapter.content }}
+        </div>
+
+    {% endfor %}
+
+{%  endblock %}
