@@ -4,7 +4,7 @@
 
     <h1>Add Chapter</h1>
 
-    {{ form_start(form_add_chapter) }}
+    {{ form_start(form_add_chapter, {'attr': {'novalidate': 'novalidate'}}) }}
 
         {{ form_row(form_add_chapter.title) }}
         {{ form_row(form_add_chapter.content) }}
