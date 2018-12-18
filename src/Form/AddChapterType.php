@@ -4,7 +4,7 @@ namespace App\Form;
 
 use App\Entity\Chapter;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,6 +19,10 @@ class AddChapterType extends AbstractType
 
             ])
             ->add('content', TextareaType::class, [
+            ])
+            ->add('tags', CollectionType::class, [
+                'entry_type' => TagType::class,
+                'allow_add' => true,
             ])
         ;
     }
