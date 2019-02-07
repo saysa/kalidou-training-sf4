@@ -27,6 +27,9 @@ class AddChapterController extends AbstractController
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($chapter);
+            foreach ($chapter->getTags() as $tag) {
+                $entityManager->persist($tag);
+            }
             $entityManager->flush();
         }
 

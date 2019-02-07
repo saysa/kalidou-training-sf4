@@ -23,6 +23,7 @@ class AddChapterType extends AbstractType
             ->add('tags', CollectionType::class, [
                 'entry_type' => TagType::class,
                 'allow_add' => true,
+                'prototype' => true,
             ])
         ;
     }
