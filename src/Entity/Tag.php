@@ -23,6 +23,12 @@ class Tag
     private $name;
 
     /**
+     * @ORM\Column(type="smallint")
+     * @var int
+     */
+    private $type;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -44,6 +50,19 @@ class Tag
     public function setName($name): void
     {
         $this->name = $name;
+    }
+
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param int $type
+     */
+    public function setType(int $type): void
+    {
+        $this->type = $type;
     }
 
 
